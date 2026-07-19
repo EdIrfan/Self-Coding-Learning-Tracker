@@ -4,6 +4,32 @@ Newest entry on top. Update at the end of every study session.
 
 ---
 
+## 2026-07-19 — SQL beginner notebook 01 complete
+
+- Learner completed `notebooks/sql/beginner/01_sql_basics.ipynb` (5/5 correct).
+  First pass had two issues, both caught in review and fixed by the learner:
+  - Q4 asked for top 5 most expensive tracks but used `LIMIT 10` — fixed to `LIMIT 5`.
+  - Q3 used double-quoted string literal (`Country = "Canada"`). SQLite tolerates this
+    (falls back to treating it as a string literal), but it's non-standard — Postgres/
+    MySQL expect single quotes for string literals and double quotes for identifiers.
+    Flagged as an interview-relevant portability gotcha; learner switched to `'Canada'`.
+- **New standing rule, recorded in `claude-context/README.md` ground rules:** the
+  "done" loop is now mandatory and automatic — when the learner says a notebook is
+  done, Claude reviews real output (not just "did it run"), updates `README.md` +
+  this log, commits + **pushes** to GitHub without asking each time (learner
+  explicitly pre-approved auto-push), and hands off the next ~5-question notebook,
+  all in the same reply.
+- Created `notebooks/sql/beginner/02_joins_and_grouping.ipynb` — INNER JOIN, 3-table
+  JOIN, GROUP BY + COUNT, GROUP BY + SUM, HAVING. Reference solutions verified against
+  the real DB. Not yet attempted.
+- **Current position:** SQL, beginner level, notebook 02, not started (0/5). Running
+  total: 5/150 SQL questions done.
+- **Next step:** learner works through notebook 02 live, says "done" — Claude reviews,
+  updates tracker, commits/pushes, hands off notebook 03 (likely subqueries or basic
+  window functions, still beginner-adjacent) automatically.
+
+---
+
 ## 2026-07-19 — Program setup
 
 - Set up project-local `.venv` with `ipykernel`, `jupyter`, `pandas`, `duckdb`, `pytest`,

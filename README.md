@@ -21,7 +21,7 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 
 | Topic | Target | Done | Status |
 |---|---|---|---|
-| **SQL** | 100–200 questions | 0 | 🟡 In progress — beginner |
+| **SQL** | 100–200 questions | 5 | 🟡 In progress — beginner |
 | **PySpark** | 100–200 questions | 0 | ⚪ Not started |
 | **Python** | TBD (scoped after SQL+PySpark) | 0 | ⚪ Not started |
 | **Pytest** | TBD | 0 | ⚪ Not started |
@@ -33,16 +33,17 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 
 | Level | Done | Notebook |
 |---|---|---|
-| Beginner | 0/5 | [`01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb) — in progress |
+| Beginner | 5/10 | [`01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb) ✅ done · [`02_joins_and_grouping.ipynb`](notebooks/sql/beginner/02_joins_and_grouping.ipynb) — in progress |
 | Intermediate | — | not started |
 | Advanced | — | not started |
 | Interview-style | — | not started |
 
 ### Currently up next
 
-Open [`notebooks/sql/beginner/01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb),
+Open [`notebooks/sql/beginner/02_joins_and_grouping.ipynb`](notebooks/sql/beginner/02_joins_and_grouping.ipynb),
 select the **"Python (SCLT tutor venv)"** kernel, and work through the 5 questions
-(SELECT/WHERE/ORDER BY/LIMIT/NULL handling) against `datasets/chinook.db`.
+(INNER JOIN, multi-table JOIN, GROUP BY + COUNT, GROUP BY + SUM, HAVING) against
+`datasets/chinook.db`.
 
 ---
 
@@ -119,4 +120,4 @@ python3 -m venv .venv
 
 ## Start here
 
-Open [`notebooks/sql/beginner/01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb).
+Open [`notebooks/sql/beginner/02_joins_and_grouping.ipynb`](notebooks/sql/beginner/02_joins_and_grouping.ipynb).

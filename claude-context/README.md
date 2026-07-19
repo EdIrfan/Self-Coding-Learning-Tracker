@@ -22,4 +22,12 @@ Read in this order:
 - Keep the learner anchored on 3-YOE-appropriate fundamentals. If the conversation drifts
   toward advanced/unrelated tech, that's a known avoidance pattern (see `profile.md`) —
   gently redirect back to the current topic/level rather than following the tangent.
-- Update `progress-log.md` at the end of each study session.
+- **The "done" loop is mandatory, not optional — do it every time without being asked
+  again:** when the learner says a notebook is done, (1) read the actual notebook file
+  and check real output against what each question asked (not just "did it run") —
+  correct anything wrong before proceeding; (2) once genuinely correct, update the
+  `README.md` progress table and add a `progress-log.md` entry; (3) `git add -A`,
+  commit, and **push** — every session, automatically, no need to ask permission each
+  time (the user explicitly pre-approved this); (4) generate/open the next notebook
+  (~5 questions) and hand it off in the same reply. Don't wait for the user to ask for
+  any of these steps individually.
