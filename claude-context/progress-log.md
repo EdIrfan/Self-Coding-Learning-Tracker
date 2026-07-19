@@ -4,6 +4,40 @@ Newest entry on top. Update at the end of every study session.
 
 ---
 
+## 2026-07-19 — SQL intermediate notebook 01 complete
+
+- Learner completed `notebooks/sql/intermediate/01_cte_window_correlated.ipynb` (5/5
+  correct after several rounds of fixes):
+  - Q1 (CTE + filter + sort): correct first try.
+  - Q2 (RANK() PARTITION BY): correct first try.
+  - Q3 (ROW_NUMBER() top-N per group): first attempt included an invalid
+    `ROWS BETWEEN unbounded_preceding AND current_row` frame clause — SQLite's
+    `ROW_NUMBER()` doesn't accept a frame at all, learner correctly identified this.
+    Second bug: `rn <= 1` instead of `rn <= 3` (only returned 1 row instead of 3),
+    fixed on second pass.
+  - Q4 (correlated-style subquery vs. overall average): three rounds of bugs —
+    (1) used `WHERE sum(Total) > ...` instead of `HAVING`, since aggregates aren't
+    available yet at the `WHERE` stage (pre-grouping); (2) after switching to
+    `HAVING`, wrote `AVG(Total)` instead of `AVG(TotalSpent)` inside the subquery —
+    the derived table only has a `TotalSpent` column, so SQLite silently resolved
+    `Total` by correlating out to the enclosing `Invoice.Total`, turning it into an
+    unintended correlated subquery with wrong per-row semantics instead of a fixed
+    overall average (no SQL error, just silently wrong output — good "trust but
+    verify real output" example); (3) missing `ORDER BY TotalSpent DESC` before
+    `LIMIT 10`, so the first 10 rows in arbitrary `GROUP BY` order were returned
+    instead of the top 10 by spend. All three fixed, final output matches Q1's
+    high-spender list truncated to 10.
+  - Q5 (self-join on `Employee.ReportsTo`): correct first try.
+- **Current:** SQL intermediate, notebook 02, in progress. Running total: 20/150.
+- Created `notebooks/sql/intermediate/02_more_windows_set_ops.ipynb` — LAG/LEAD,
+  running total (window frame), UNION, set-difference via `NOT IN`/`EXCEPT`-style
+  pattern, multi-CTE query. Reference solutions verified against `datasets/chinook.db`.
+  Not yet attempted.
+- **Next:** notebook 02 done → continue intermediate SQL (more advanced window/set-op
+  patterns) or move to advanced SQL depending on how solid intermediate feels.
+
+---
+
 ## 2026-07-19 — SQL beginner notebook 03 complete — beginner SQL closed out
 
 - Learner completed `notebooks/sql/beginner/03_left_join_case_subquery.ipynb` (5/5
