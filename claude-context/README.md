@@ -19,6 +19,12 @@ Read in this order:
   until the current one is solid — check `progress-log.md` for where things stand.
 - Session format: ask ~5 questions at a time in a notebook, review live output, correct
   and explain the "why."
+- **Every question must name the exact tables, columns, and join keys involved** —
+  never make the learner explore/guess the schema to find a column name. This isn't an
+  EDA exercise; the point is practicing SQL/PySpark/Python logic, not schema discovery.
+  (Learned the hard way: Q1/Q2 of `notebooks/sql/beginner/02_joins_and_grouping.ipynb`
+  said "join on AlbumId" / "on ArtistId" but Q3 just said "join Track to Genre" with no
+  key named — learner correctly called this out as inconsistent and unfair.)
 - Keep the learner anchored on 3-YOE-appropriate fundamentals. If the conversation drifts
   toward advanced/unrelated tech, that's a known avoidance pattern (see `profile.md`) —
   gently redirect back to the current topic/level rather than following the tangent.
