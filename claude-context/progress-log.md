@@ -4,6 +4,28 @@ Newest entry on top. Update at the end of every study session.
 
 ---
 
+## 2026-07-19 — SQL beginner notebook 02 complete
+
+- Learner completed `notebooks/sql/beginner/02_joins_and_grouping.ipynb` (5/5 correct).
+  Two friction rounds surfaced systemic issues in question quality:
+  - Q3 didn't name the join key, inconsistent with Q1/Q2. Learner called it out. Added
+    ground rule: every question must name exact tables/columns/join keys — no schema
+    exploration.
+  - Discovered on review that Q1/Q2 were missing `LIMIT 10` in the actual query despite
+    the question asking for it (output showed 3503 rows, not 10). Added stronger ground
+    rule: before posting any question, write the full reference solution, then re-check
+    the question text alone can reproduce it (verify join keys, aggregate target, sort
+    column/direction, aliases are all stated).
+  - Final pass: learner added `LIMIT 10` to Q1/Q2, all 5 correct.
+- Created `notebooks/sql/beginner/03_left_join_case_subquery.ipynb` — LEFT JOIN
+  anti-join, DISTINCT, MIN/MAX/AVG, CASE WHEN + GROUP BY, basic subquery. Last beginner
+  notebook. Reference solutions verified. Not yet attempted.
+- **Current:** SQL beginner, notebook 03, in progress. Running total: 10/150 questions done.
+- **Next:** Notebook 03 done → beginner SQL closed → intermediate (CTEs, window functions,
+  correlated subqueries, self-joins).
+
+---
+
 ## 2026-07-19 — SQL beginner notebook 01 complete
 
 - Learner completed `notebooks/sql/beginner/01_sql_basics.ipynb` (5/5 correct).
