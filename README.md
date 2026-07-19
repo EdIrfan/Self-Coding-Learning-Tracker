@@ -21,7 +21,7 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 
 | Topic | Target | Done | Status |
 |---|---|---|---|
-| **SQL** | 100–200 questions | 10 | 🟡 In progress — beginner |
+| **SQL** | 100–200 questions | 15 | 🟡 In progress — intermediate |
 | **PySpark** | 100–200 questions | 0 | ⚪ Not started |
 | **Python** | TBD (scoped after SQL+PySpark) | 0 | ⚪ Not started |
 | **Pytest** | TBD | 0 | ⚪ Not started |
@@ -33,18 +33,17 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 
 | Level | Done | Notebook |
 |---|---|---|
-| Beginner | 10/15 | [`01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb) ✅ · [`02_joins_and_grouping.ipynb`](notebooks/sql/beginner/02_joins_and_grouping.ipynb) ✅ · [`03_left_join_case_subquery.ipynb`](notebooks/sql/beginner/03_left_join_case_subquery.ipynb) — in progress (last beginner notebook) |
-| Intermediate | — | not started |
+| Beginner | 15/15 ✅ | [`01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb) ✅ · [`02_joins_and_grouping.ipynb`](notebooks/sql/beginner/02_joins_and_grouping.ipynb) ✅ · [`03_left_join_case_subquery.ipynb`](notebooks/sql/beginner/03_left_join_case_subquery.ipynb) ✅ |
+| Intermediate | 0/5 | [`01_cte_window_correlated.ipynb`](notebooks/sql/intermediate/01_cte_window_correlated.ipynb) — in progress |
 | Advanced | — | not started |
 | Interview-style | — | not started |
 
 ### Currently up next
 
-Open [`notebooks/sql/beginner/03_left_join_case_subquery.ipynb`](notebooks/sql/beginner/03_left_join_case_subquery.ipynb),
+Open [`notebooks/sql/intermediate/01_cte_window_correlated.ipynb`](notebooks/sql/intermediate/01_cte_window_correlated.ipynb),
 select the **"Python (SCLT tutor venv)"** kernel, and work through the 5 questions
-(LEFT JOIN anti-join pattern, DISTINCT, MIN/MAX/AVG, CASE WHEN + GROUP BY, basic
-subquery) against `datasets/chinook.db`. This closes out beginner SQL — intermediate
-(CTEs, window functions, correlated subqueries, self-joins) is next after this.
+(CTE, window function w/ PARTITION BY, RANK/ROW_NUMBER, correlated subquery, self-join)
+against `datasets/chinook.db`. Beginner SQL is fully complete.
 
 ---
 
@@ -121,4 +120,4 @@ python3 -m venv .venv
 
 ## Start here
 
-Open [`notebooks/sql/beginner/03_left_join_case_subquery.ipynb`](notebooks/sql/beginner/03_left_join_case_subquery.ipynb).
+Open [`notebooks/sql/intermediate/01_cte_window_correlated.ipynb`](notebooks/sql/intermediate/01_cte_window_correlated.ipynb).

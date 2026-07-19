@@ -4,6 +4,23 @@ Newest entry on top. Update at the end of every study session.
 
 ---
 
+## 2026-07-19 — SQL beginner notebook 03 complete — beginner SQL closed out
+
+- Learner completed `notebooks/sql/beginner/03_left_join_case_subquery.ipynb` (5/5
+  correct, no corrections needed): Q1 LEFT JOIN anti-join (correctly 0 rows, right 3
+  cols), Q2 DISTINCT BillingCountry (24 countries, alphabetical), Q3 MIN/MAX/AVG
+  Milliseconds in one row, Q4 CASE WHEN + GROUP BY (Short 1462 / Long 2041), Q5
+  subquery vs. AVG(UnitPrice) (10 rows, all $1.99 > avg).
+- **Beginner SQL fully complete: 15/15.**
+- Created `notebooks/sql/intermediate/01_cte_window_correlated.ipynb` — CTE, window
+  function (PARTITION BY + RANK/ROW_NUMBER), correlated subquery, self-join. Reference
+  solutions verified against `datasets/chinook.db`. Not yet attempted.
+- **Current:** SQL intermediate, notebook 01, in progress. Running total: 15/150.
+- **Next:** notebook 01 done → next intermediate notebook (more window functions /
+  set operations), continuing toward advanced.
+
+---
+
 ## 2026-07-19 — SQL beginner notebook 02 complete
 
 - Learner completed `notebooks/sql/beginner/02_joins_and_grouping.ipynb` (5/5 correct).
