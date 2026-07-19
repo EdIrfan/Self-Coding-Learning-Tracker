@@ -25,6 +25,16 @@ Read in this order:
   (Learned the hard way: Q1/Q2 of `notebooks/sql/beginner/02_joins_and_grouping.ipynb`
   said "join on AlbumId" / "on ArtistId" but Q3 just said "join Track to Genre" with no
   key named — learner correctly called this out as inconsistent and unfair.)
+- **Before publishing any question, write and actually run a full reference solution
+  first — then re-read the question text and check whether that exact solution could
+  be reproduced from the text alone, with zero exploration or guessing.** Having a
+  verified answer in hand isn't enough if the prompt doesn't fully specify it (join
+  keys, which aggregate/column to count, sort column + direction, exact aliases). If
+  the reference solution needed a detail the question didn't state, add it before
+  posting. (Second instance of this: Q3 said "return ... ordered by NumTracks
+  descending" but didn't specify what to aggregate on, and separately the learner's
+  correct-logic answer came out unsorted because the question's own sort requirement
+  wasn't restated clearly enough at the point of writing the query.)
 - Keep the learner anchored on 3-YOE-appropriate fundamentals. If the conversation drifts
   toward advanced/unrelated tech, that's a known avoidance pattern (see `profile.md`) —
   gently redirect back to the current topic/level rather than following the tangent.
