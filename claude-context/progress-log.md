@@ -9,10 +9,13 @@ Newest entry on top. Update at the end of every study session.
 - Set up project-local `.venv` with `ipykernel`, `jupyter`, `pandas`, `duckdb`, `pytest`,
   `pyspark`; registered Jupyter kernel "Python (SCLT tutor venv)". Network was unstable
   during install (repeated timeouts) but `pyspark` ultimately installed successfully.
-  **Java/JVM is still missing** on this machine (`pyspark` needs one at runtime, separate
-  from the pip package) — Claude can't install it (`sudo` needs an interactive password).
-  User needs to run `sudo apt install -y openjdk-17-jdk-headless` themselves before any
-  PySpark notebook that actually starts a `SparkSession` will work.
+  Java was missing too (`pyspark` needs a JVM at runtime, separate from the pip package;
+  Claude can't install it — `sudo` needs an interactive password) — user installed
+  `openjdk-17-jdk-headless` manually. PySpark then smoke-tested end to end
+  (`SparkSession` starts, runs a job, reports version 4.2.0) — environment is fully
+  functional. Known caveat: pandas 3.0.3 outpaces PySpark's officially supported pandas
+  version, so `toPandas()`/pandas-UDF paths throw a `FutureWarning`; not blocking, revisit
+  only if it actually breaks something.
 - Folder structure reworked per user request: `sql/`, `pyspark/`, `python/` each get
   `beginner/intermediate/advanced/interview_style/`; `pytest/` gets only
   `beginner/intermediate/` (no advanced — not needed at 3 YOE scope).

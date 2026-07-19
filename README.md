@@ -90,21 +90,18 @@ A virtual environment is scoped to **this folder only** (`.venv/`), with a dedic
 Jupyter kernel: **"Python (SCLT tutor venv)"**. Select that kernel when opening any
 notebook in VS Code.
 
-Installed: `ipykernel`, `jupyter`, `pandas`, `duckdb`, `pytest`, `pyspark`.
+Installed: `ipykernel`, `jupyter`, `pandas`, `duckdb`, `pytest`, `pyspark`, plus
+`openjdk-17-jdk-headless` (system-level — PySpark needs a JVM at runtime, not just the
+pip package). PySpark is smoke-tested and confirmed working end to end (`SparkSession`
+starts, runs a job, reports version 4.2.0).
 
-⚠️ **PySpark needs a JVM to actually run** (it's a Python wrapper over Java/Scala Spark)
-— the pip package alone isn't enough. This machine has no Java yet. Install it with:
-
-```bash
-sudo apt install -y openjdk-17-jdk-headless
-```
-
-(This is the one piece of setup that can't be scoped to the project `.venv` — Java is
-always a system-level install. Claude can't run `sudo` itself; run this manually.)
+Known caveat: pandas 3.0.3 is ahead of what PySpark officially supports, so
+`toPandas()`/pandas-UDF paths throw a `FutureWarning`. Not blocking so far.
 
 Setup (already done, kept here for reference / re-setup after a fresh clone):
 
 ```bash
+sudo apt install -y openjdk-17-jdk-headless   # JVM for PySpark — run manually, Claude can't sudo
 python3 -m venv .venv
 ./.venv/bin/pip install ipykernel jupyter pandas duckdb pytest pyspark
 ./.venv/bin/python -m ipykernel install --user --name=sclt-venv --display-name "Python (SCLT tutor venv)"
