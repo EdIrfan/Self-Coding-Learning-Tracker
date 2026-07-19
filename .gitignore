@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# SCLT — large practice datasets, downloaded locally via claude-context/setup_datasets.sh.
+# Kept out of git so the repo stays small/cloneable; datasets/chinook.db IS tracked (tiny, fixed fixture).
+datasets/nyc_taxi/
