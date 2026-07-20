@@ -21,7 +21,7 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 
 | Topic | Target | Done | Status |
 |---|---|---|---|
-| **SQL** | 100–200 questions | 20 | 🟡 In progress — intermediate |
+| **SQL** | 100–200 questions | 25 | 🟡 In progress — intermediate |
 | **PySpark** | 100–200 questions | 0 | ⚪ Not started |
 | **Python** | TBD (scoped after SQL+PySpark) | 0 | ⚪ Not started |
 | **Pytest** | TBD | 0 | ⚪ Not started |
@@ -34,16 +34,17 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 | Level | Done | Notebook |
 |---|---|---|
 | Beginner | 15/15 ✅ | [`01_sql_basics.ipynb`](notebooks/sql/beginner/01_sql_basics.ipynb) ✅ · [`02_joins_and_grouping.ipynb`](notebooks/sql/beginner/02_joins_and_grouping.ipynb) ✅ · [`03_left_join_case_subquery.ipynb`](notebooks/sql/beginner/03_left_join_case_subquery.ipynb) ✅ |
-| Intermediate | 5/? | [`01_cte_window_correlated.ipynb`](notebooks/sql/intermediate/01_cte_window_correlated.ipynb) ✅ · [`02_more_windows_set_ops.ipynb`](notebooks/sql/intermediate/02_more_windows_set_ops.ipynb) — in progress |
+| Intermediate | 10/? | [`01_cte_window_correlated.ipynb`](notebooks/sql/intermediate/01_cte_window_correlated.ipynb) ✅ · [`02_more_windows_set_ops.ipynb`](notebooks/sql/intermediate/02_more_windows_set_ops.ipynb) ✅ · [`03_ties_intersect_except.ipynb`](notebooks/sql/intermediate/03_ties_intersect_except.ipynb) — in progress |
 | Advanced | — | not started |
 | Interview-style | — | not started |
 
 ### Currently up next
 
-Open [`notebooks/sql/intermediate/02_more_windows_set_ops.ipynb`](notebooks/sql/intermediate/02_more_windows_set_ops.ipynb),
+Open [`notebooks/sql/intermediate/03_ties_intersect_except.ipynb`](notebooks/sql/intermediate/03_ties_intersect_except.ipynb),
 select the **"Python (SCLT tutor venv)"** kernel, and work through the 5 questions
-(LAG/LEAD, running total, UNION, INTERSECT/EXCEPT via NOT IN, multi-CTE) against
-`datasets/chinook.db`. Beginner SQL and intermediate notebook 1 are both complete.
+(window `SUM() OVER ()` percent-of-total, `EXCEPT`, `RANK()` within a partition,
+multi-CTE with `RANK()` ties, `INTERSECT`) against `datasets/chinook.db`. Beginner SQL
+and intermediate notebooks 1–2 are all complete.
 
 ---
 
@@ -120,4 +121,4 @@ python3 -m venv .venv
 
 ## Start here
 
-Open [`notebooks/sql/intermediate/02_more_windows_set_ops.ipynb`](notebooks/sql/intermediate/02_more_windows_set_ops.ipynb).
+Open [`notebooks/sql/intermediate/03_ties_intersect_except.ipynb`](notebooks/sql/intermediate/03_ties_intersect_except.ipynb).

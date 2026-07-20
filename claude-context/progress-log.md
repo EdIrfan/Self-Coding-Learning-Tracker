@@ -4,6 +4,34 @@ Newest entry on top. Update at the end of every study session.
 
 ---
 
+## 2026-07-20 — SQL intermediate notebook 02 complete
+
+- Learner completed `notebooks/sql/intermediate/02_more_windows_set_ops.ipynb` (5/5
+  correct):
+  - Q1 (`LAG()`): correct first try.
+  - Q2 (running total via `SUM() OVER (... ROWS BETWEEN UNBOUNDED PRECEDING AND
+    CURRENT ROW)`): correct first try.
+  - Q3 (`UNION` of `Customer`/`Employee` from Canada): correct first try.
+  - Q4 (`NOT IN` set difference for artists with no albums): correct first try.
+  - Q5 (multi-CTE, `GenreCounts` → `TopGenres`): first attempt wrote `WITH` twice
+    (`WITH GenreCounts AS (...), WITH TopGenres AS (...)`) — SQLite only allows one
+    `WITH` keyword introducing a comma-separated CTE chain, so the second `WITH` was a
+    syntax error. Learner fixed it by dropping the second `WITH`, re-ran, correct
+    output (5 genres with >100 tracks: Rock, Latin, Metal, Alternative & Punk, Jazz).
+- **Running total: 25/150.**
+- Created `notebooks/sql/intermediate/03_ties_intersect_except.ipynb` — window
+  `SUM() OVER ()` with no `PARTITION BY` (percent-of-total pattern), `EXCEPT`,
+  `RANK()` within a partition, multi-CTE combining `RANK()` with tie behavior (flagged
+  explicitly in the question since ties genuinely produce multiple rows per group —
+  not a bug), `INTERSECT`. All 5 reference solutions written and verified against
+  `datasets/chinook.db` before publishing (per the ground rule), including checking
+  join pairs for non-empty/interesting results (e.g. `Rock ∩ Jazz` artists = 0, so
+  switched to `Rock ∩ Alternative & Punk` = 6 artists). Not yet attempted.
+- **Next:** notebook 03 done → continue intermediate SQL or move to advanced SQL
+  depending on how solid intermediate feels.
+
+---
+
 ## 2026-07-19 — SQL intermediate notebook 01 complete
 
 - Learner completed `notebooks/sql/intermediate/01_cte_window_correlated.ipynb` (5/5
