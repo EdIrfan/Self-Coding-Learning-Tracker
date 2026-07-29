@@ -4,6 +4,40 @@ Newest entry on top. Update at the end of every study session.
 
 ---
 
+## 2026-07-29 — Switched to rotating PySpark/Python sessions (SQL paused); PySpark
+notebook 01 created, Python notebook 01 created
+
+- Learner said they were bored of pure SQL and asked to bring in PySpark. Flagged that
+  SQL intermediate wasn't finished yet (notebook 03 in progress, no advanced/
+  interview-style started) and asked how to handle it — learner initially chose to
+  **alternate sessions** (SQL → PySpark → Python → SQL → ...), then asked to fold
+  Python into the rotation too, then revised again in the same session: **drop SQL
+  from the rotation entirely** — rotate PySpark ↔ Python only, until **both** reach
+  intermediate level. SQL intermediate notebook 03 stays parked as-is until then.
+- Recorded the final rotation decision in `claude-context/README.md` ground rules.
+  Pytest stays out of the rotation — added later, after PySpark/Python both reach
+  intermediate.
+- Created `notebooks/pyspark/beginner/01_dataframe_basics.ipynb` — `select`/`filter`/
+  `orderBy`/`limit`, `withColumn` + `describe()`, `groupBy`+`agg`, multi-condition
+  filter + `count()`, `groupBy`+`agg`+`orderBy` descending. Against
+  `datasets/nyc_taxi/yellow_tripdata_2023-01.parquet` (~3.07M rows). All 5 reference
+  solutions run and verified via a real `SparkSession` before publishing. Flagged two
+  genuine data-quality quirks in the question text itself (absurd `trip_distance`
+  outliers in Q1, negative trip duration in Q2) so the learner doesn't mistake real
+  messy data for a bug in their own query. Not yet attempted.
+- Created `notebooks/python/beginner/01_fundamentals.ipynb` — first Python session
+  (data structures, comprehensions, functions, string handling, basic OOP) since
+  Python was previously untouched and is now in the active rotation alongside
+  PySpark. Not yet attempted.
+- **PySpark running total: 0/? (target 100–200). Python running total: 0/? (target
+  TBD).**
+- **Next:** learner works through PySpark notebook 01 and/or Python notebook 01 live,
+  alternating each session. SQL intermediate notebook 03 (window `SUM() OVER ()`,
+  `EXCEPT`, `RANK()`, multi-CTE ties, `INTERSECT`) is parked until PySpark and Python
+  both reach intermediate.
+
+---
+
 ## 2026-07-20 — SQL intermediate notebook 02 complete
 
 - Learner completed `notebooks/sql/intermediate/02_more_windows_set_ops.ipynb` (5/5

@@ -21,12 +21,15 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 
 | Topic | Target | Done | Status |
 |---|---|---|---|
-| **SQL** | 100–200 questions | 25 | 🟡 In progress — intermediate |
-| **PySpark** | 100–200 questions | 0 | ⚪ Not started |
-| **Python** | TBD (scoped after SQL+PySpark) | 0 | ⚪ Not started |
+| **SQL** | 100–200 questions | 25 | ⏸️ Paused — intermediate (resumes once PySpark + Python reach intermediate) |
+| **PySpark** | 100–200 questions | 0 | 🟡 In progress — beginner |
+| **Python** | TBD (scoped after SQL+PySpark) | 0 | 🟡 In progress — beginner |
 | **Pytest** | TBD | 0 | ⚪ Not started |
 
-**Order:** SQL → PySpark → Python → Pytest. Don't skip ahead — see
+**Order:** SQL → PySpark → Python → Pytest to start each topic, but as of 2026-07-29
+**SQL is paused and sessions rotate PySpark ↔ Python only**, until both reach
+intermediate level (learner's request — wanted variety after a long SQL stretch). SQL
+resumes, and Pytest joins the rotation, after that. See
 [`claude-context/tutoring-plan.md`](claude-context/tutoring-plan.md).
 
 ### SQL breakdown
@@ -38,13 +41,39 @@ Full context for how/why this program is run lives in [`claude-context/`](claude
 | Advanced | — | not started |
 | Interview-style | — | not started |
 
+### PySpark breakdown
+
+| Level | Done | Notebook |
+|---|---|---|
+| Beginner | 0/5 | [`01_dataframe_basics.ipynb`](notebooks/pyspark/beginner/01_dataframe_basics.ipynb) — in progress |
+| Intermediate | — | not started |
+| Advanced | — | not started |
+| Interview-style | — | not started |
+
+### Python breakdown
+
+| Level | Done | Notebook |
+|---|---|---|
+| Beginner | 0/5 | [`01_fundamentals.ipynb`](notebooks/python/beginner/01_fundamentals.ipynb) — in progress |
+| Intermediate | — | not started |
+| Advanced | — | not started |
+| Interview-style | — | not started |
+
 ### Currently up next
 
-Open [`notebooks/sql/intermediate/03_ties_intersect_except.ipynb`](notebooks/sql/intermediate/03_ties_intersect_except.ipynb),
-select the **"Python (SCLT tutor venv)"** kernel, and work through the 5 questions
-(window `SUM() OVER ()` percent-of-total, `EXCEPT`, `RANK()` within a partition,
-multi-CTE with `RANK()` ties, `INTERSECT`) against `datasets/chinook.db`. Beginner SQL
-and intermediate notebooks 1–2 are all complete.
+Sessions **rotate PySpark ↔ Python** until both reach intermediate (SQL paused). Two
+notebooks are open right now:
+
+- PySpark: [`notebooks/pyspark/beginner/01_dataframe_basics.ipynb`](notebooks/pyspark/beginner/01_dataframe_basics.ipynb)
+  (`select`/`filter`/`orderBy`/`limit`, `withColumn`+`describe()`, `groupBy`+`agg`,
+  multi-condition filter, descending `groupBy`+`agg`) against
+  `datasets/nyc_taxi/yellow_tripdata_2023-01.parquet`.
+- Python: [`notebooks/python/beginner/01_fundamentals.ipynb`](notebooks/python/beginner/01_fundamentals.ipynb)
+  (list comprehension, manual grouping into a dict of lists, a function using `*args`,
+  string parsing, a basic class) — pure Python, no dataset needed.
+
+SQL intermediate notebook 03 ([`03_ties_intersect_except.ipynb`](notebooks/sql/intermediate/03_ties_intersect_except.ipynb))
+is parked mid-session and picks back up once PySpark and Python both reach intermediate.
 
 ---
 
@@ -121,4 +150,6 @@ python3 -m venv .venv
 
 ## Start here
 
-Open [`notebooks/sql/intermediate/03_ties_intersect_except.ipynb`](notebooks/sql/intermediate/03_ties_intersect_except.ipynb).
+Open [`notebooks/pyspark/beginner/01_dataframe_basics.ipynb`](notebooks/pyspark/beginner/01_dataframe_basics.ipynb)
+or [`notebooks/python/beginner/01_fundamentals.ipynb`](notebooks/python/beginner/01_fundamentals.ipynb)
+— sessions rotate between the two until both reach intermediate.

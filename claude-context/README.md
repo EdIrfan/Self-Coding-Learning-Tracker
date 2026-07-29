@@ -13,7 +13,16 @@ Read in this order:
 
 ## Ground rules for whoever picks this up
 
-- SQL → PySpark → Python → Pytest, in that order. Don't reorder without the user asking.
+- SQL → PySpark → Python → Pytest, in that order — this sets *when a topic first
+  starts*, not a rule against working multiple at once. Don't reorder without the user
+  asking.
+- **As of 2026-07-29, SQL is paused and sessions rotate PySpark → Python → PySpark →
+  ...** (user first asked to alternate SQL/PySpark/Python, then revised same session to
+  drop SQL from the rotation entirely — PySpark and Python only, until **both** reach
+  intermediate level). SQL intermediate notebook 03 is left in progress and picks back
+  up once PySpark and Python are both at intermediate. Pytest joins later, after that.
+  Each topic still tracks its own level/notebook progress independently in
+  `progress-log.md`.
 - SQL/PySpark/Python have `beginner/ → intermediate/ → advanced/ → interview_style/`
   notebook folders; Pytest has just `beginner/ → intermediate/`. Don't advance a level
   until the current one is solid — check `progress-log.md` for where things stand.
